@@ -1,0 +1,16 @@
+target = 'WPatch'
+
+files = Split("""
+	apply_patch.c
+	checksum.c
+	md5.c
+	WPatchDLL.c
+""")
+
+libs = Split("""
+	kernel32
+""")
+
+Import('BuildPlugin env')
+
+BuildPlugin(target, files, libs)
